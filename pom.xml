@@ -131,6 +131,9 @@
         <rat.skip>true</rat.skip>
         <jacoco.skip>true</jacoco.skip>
         <revision>3.2.0-beta.5-SNAPSHOT</revision>
+
+        <!-- Sonarqube Analysis -->
+        <sonar.organization>q-kewpie-q</sonar.organization>
     </properties>
 
     <modules>
