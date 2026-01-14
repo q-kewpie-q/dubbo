@@ -1,7 +1,9 @@
 ## How to Compile and run a Sonarqube Scan:
 1. To compile, run:
-` mvn clean compile test-compile -DskipTests -pl '!dubbo-xds' -am`
-2. To scan, run:
+```
+ mvn clean compile test-compile -DskipTests -pl '!dubbo-xds' -am
+```
+3. To scan, run:
 ```
 export SONAR_TOKEN=<YOUR_TOKEN>
 mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=<THIS_REPO> -DskipTests "-Dsonar.exclusions=**/dubbo-xds/**,**/dubbo-distribution/**"
