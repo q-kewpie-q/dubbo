@@ -9,6 +9,8 @@ To check for compilation, run:
 ```
 3. To scan, run:
 ```
+export SONAR_TOKEN=<YOUR_TOKEN>
+
 mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
   -Dsonar.host.url=https://sonarcloud.io \
   -Dsonar.organization=q-kewpie-q \
