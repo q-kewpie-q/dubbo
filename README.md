@@ -12,10 +12,6 @@ To check for compilation, run:
 export SONAR_TOKEN=<YOUR_TOKEN>
 
 mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-  -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.organization=q-kewpie-q \
-  -Dsonar.projectKey=q-kewpie-q_dubbo \
-  -Dsonar.token="$SONAR_TOKEN" \
   -DskipTests \
   -Dsonar.exclusions="**/dubbo-xds/**,**/dubbo-distribution/**" \
   -Dsonar.java.binaries=target/classes \
