@@ -3,10 +3,22 @@
 ```
  mvn clean compile test-compile -DskipTests -pl '!dubbo-xds' -am
 ```
+To check for compilation, run:
+```
+ ls dubbo-common/target/classes/ 2>/dev/null && echo "✓ Project is compiled" || echo "✗ Project needs compilation"
+```
 3. To scan, run:
 ```
-export SONAR_TOKEN=<YOUR_TOKEN>
-mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=<THIS_REPO> -DskipTests "-Dsonar.exclusions=**/dubbo-xds/**,**/dubbo-distribution/**"
+mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+  -Dsonar.host.url=https://sonarcloud.io \
+  -Dsonar.organization=q-kewpie-q \
+  -Dsonar.projectKey=q-kewpie-q_dubbo \
+  -Dsonar.token="$SONAR_TOKEN" \
+  -DskipTests \
+  -Dsonar.exclusions="**/dubbo-xds/**,**/dubbo-distribution/**" \
+  -Dsonar.java.binaries=target/classes \
+  -Dsonar.java.test.binaries=target/test-classes
+
 ```
 
 # Apache Dubbo Project
